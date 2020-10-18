@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Sail | Hawley.xyz</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<div class="page">
+		<input id="goButton" type="submit" value="Sail"></input>
+
+		<div class="log">
+			<p class="facts"> Sailor's Log: </p>
+			<div id="results" class="facts">
+			</div>
+			<div id="advice" class="notes">
+			</div>
+		</div>
+		<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+			<defs>
+				<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+			</defs>
+			<g class="parallax">
+				<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(16,88,112,0.7" />
+				<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(16,88,122,0.5)" />
+				<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(16,88,122,0.3)" />
+				<use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(16,88,122)" />
+			</g>
+		</svg>
+		<div class="image">
+			<img src="images/sail.png" />
+		</div>
+		<div class="footer">
+			<p>References:</p>
+			<a href="https://developers.teleport.org/api/">City API</a>
+			<a href="https://api.adviceslip.com/">Advice API</a>
+			<a href="https://codepen.io/csspoints/pen/WNeOEqd">Waves starting point</a>
+			<a href="https://imgbin.com/png/gedqrQPm/sail-drawing-png">Boat image</a>
+			<a href="https://github.com/mdavid4/sail.git">Github</a>
+		</div>
+	</div>
+	<script text="type/javascript" src="/script.js">
+	</script>
+</body>
+
+</html>

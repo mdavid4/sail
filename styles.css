@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    background-color: #B7E8EB;
+    background: radial-gradient(ellipse at center, rgba(255, 254, 234, 1) 0%, rgba(255, 254, 234, 1) 35%, #B7E8EB 100%);
+}
+
+.waves {
+    position: absolute;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+    bottom: 2.4em;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.parallax>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+p {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+input {
+    padding: 1em;
+    border-radius: 1em;
+    border: 2px yellow dashed;
+    font-size: 2em;
+    margin: 3em;
+    margin-left: 43%;
+    background-color: #f0f7d7;
+}
+
+input:hover {
+    background-color: #fff;
+}
+
+body {
+    color: #000;
+}
+
+.log {
+    overflow-x: auto;
+    background-color: #c99769;
+    border: #78583b 3px dotted;
+    margin: 2em;
+    padding: 1em;
+}
+
+.facts {
+    font-family: "Courier New", Courier, monospace;
+}
+
+.notes {
+    font-family: cursive;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #015871;
+    padding: 2px 0.5em;
+    bottom: 0px;
+    position: fixed;
+    width: 100%;
+    height: 2em;
+}
+
+.page {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 2.5em;
+}
+
+.footer a, .footer p {
+    margin-top: 0.5em;
+    color: coral;
+}
+
+img {
+    max-width: 50%;
+    height: auto;
+}
+
+.image {
+    position: absolute;
+    left: 30%;
+    max-width: 30%;
+    bottom: 4.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    input {
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+}
