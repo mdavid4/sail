@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="middleAligner">
     <div class="map">
         <div class="noOverflow">
             <div class="center" v-for="island in this.$root.$data.islands" :key="island.id" v-bind:style="{ left: island.long + '%', bottom: island.lat + '%' }">
@@ -25,18 +25,6 @@
             </div>
         </div>
     </div>
-
-    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-        <defs>
-            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-        </defs>
-        <g class="parallax">
-            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(16,88,112,0.7" />
-            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(16,88,122,0.5)" />
-            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(16,88,122,0.3)" />
-            <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(16,88,122)" />
-        </g>
-    </svg>
 </div>
 </template>
 
@@ -108,99 +96,23 @@ export default {
 </script>
 
 <style scoped>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    height: 100%;
-    background-color: #B7E8EB;
-    background: radial-gradient(ellipse at center, rgba(255, 254, 234, 1) 0%, rgba(255, 254, 234, 1) 35%, #B7E8EB 100%);
-}
-
-.waves {
+.center {
     position: absolute;
-    width: 100%;
-    height: 15vh;
-    margin-bottom: -7px;
-    bottom: 2.4em;
-    min-height: 100px;
-    max-height: 150px;
-    left: 0px;
+    display: block;
 }
 
-.parallax>use {
-    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
-}
-
-.parallax>use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
-}
-
-.parallax>use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-}
-
-.parallax>use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-}
-
-.parallax>use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
-}
-
-@keyframes move-forever {
-    0% {
-        transform: translate3d(-90px, 0, 0);
-    }
-
-    100% {
-        transform: translate3d(85px, 0, 0);
-    }
-}
-
-p {
-    margin-top: 0.5em;
-    text-align: left;
-}
-
-#goButton {
-    padding: 1em;
-    border-radius: 1em;
-    border: 2px yellow dashed;
-    font-size: 2em;
-    margin: 1em;
-    background-color: #f0f7d7;
-}
-
-#goButton:hover {
-    background-color: #fff;
-}
-
-body {
-    color: #000;
-}
-
-th,
 td {
-    border: 1px solid #78583b;
-    padding: 0.1em;
+    border: 1px dashed #78583b;
+    align-items: left;
+    spacing: 0px;
+    margin: 0px;
 }
 
 table {
     border-collapse: collapse;
     border-style: hidden;
-}
-
-.center {
-    position: absolute;
-    display: block;
+    spacing: 0px;
+    margin: 0px;
 }
 
 .islandPoint {
@@ -245,7 +157,7 @@ table {
     font-family: "Courier New", Courier, monospace;
     height: 50%;
     position: relative;
-    width: 700px;
+    width: 650px;
 }
 
 .marker {
@@ -259,6 +171,11 @@ table {
     bottom: 0.6em;
 }
 
+.middleAligner {
+    display: flex;
+    justify-content: center;
+}
+
 .range {
     width: 10em;
     height: 10em;
@@ -270,29 +187,8 @@ table {
     pointer-events: none;
 }
 
-.notes {
-    font-family: cursive;
-}
-
-.error {
-    text-shadow: 1px 1px 1px red;
-    pointer-events: none;
-}
-
 .measuringStick {
     height: 0.1em;
     width: 0.1em;
-}
-
-@media (max-width: 768px) {
-    .waves {
-        height: 40px;
-        min-height: 40px;
-    }
-
-    #goButton {
-        margin-top: 10%;
-        margin-bottom: 10%;
-    }
 }
 </style>

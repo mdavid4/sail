@@ -11,7 +11,7 @@ let goods = ["food", "lumber", "ore", "aether", "luxury"]
 let data = {
     islands: mock,
     currentIslandID: 13,
-    money: 10000,
+    money: 60,
     capacity: 40,
     range: 15,
     license: 0,

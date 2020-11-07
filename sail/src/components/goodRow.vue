@@ -17,7 +17,6 @@
 </template>
 
 <script>
-console.log("test");
 export default {
     name: 'goodRow',
     props: {
@@ -33,8 +32,7 @@ export default {
     computed: {
         filledInventory() {
             let inventory = this.$root.$data.inventory;
-            return inventory.food + inventory.lumber + inventory.ore +
-                inventory.aether + inventory.luxury;
+            return Object.keys(inventory).reduce((sum, key) => sum + parseFloat(inventory[key] || 0), 0);
         },
     },
     methods: {
