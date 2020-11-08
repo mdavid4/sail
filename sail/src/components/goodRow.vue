@@ -37,19 +37,19 @@ export default {
     },
     methods: {
         buyOne() {
-            if (this.$root.$data.money > this.island[this.goodName] && this.filledInventory < this.$root.$data.capacity) {
+            if (this.$root.$data.money >= this.island[this.goodName] && this.filledInventory < this.$root.$data.capacity) {
                 this.$root.$data.money -= this.island[this.goodName];
                 this.$root.$data.inventory[this.goodName]++;
             }
         },
         buyTen() {
-            if (this.$root.$data.money > 10 * this.island[this.goodName] && this.filledInventory + 10 <= this.$root.$data.capacity) {
+            if (this.$root.$data.money >= 10 * this.island[this.goodName] && this.filledInventory + 10 <= this.$root.$data.capacity) {
                 this.$root.$data.money -= 10 * this.island[this.goodName];
                 this.$root.$data.inventory[this.goodName] += 10;
             }
         },
         buyHundred() {
-            if (this.$root.$data.money > 100 * this.island[this.goodName] && this.filledInventory + 100 <= this.$root.$data.capacity) {
+            if (this.$root.$data.money >= 100 * this.island[this.goodName] && this.filledInventory + 100 <= this.$root.$data.capacity) {
                 this.$root.$data.money -= 100 * this.island[this.goodName];
                 this.$root.$data.inventory[this.goodName] += 100;
             }

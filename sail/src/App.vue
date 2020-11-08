@@ -20,11 +20,9 @@
         </svg>
         <div class="footer">
             <p>References:</p>
-            <a href="https://developers.teleport.org/api/">City API</a>
-            <a href="https://api.adviceslip.com/">Advice API</a>
             <a href="https://codepen.io/csspoints/pen/WNeOEqd">Waves starting point</a>
-            <a href="https://imgbin.com/png/gedqrQPm/sail-drawing-png">Boat image</a>
-            <a href="https://github.com/mdavid4/sail.git">Github</a>
+            <a href="https://github.com/mdavid4/sail.git">This project's Github</a>
+            <a href="http://skyrates.net/">Inspired by Skyrates</a>
         </div>
     </div>
 </div>
@@ -133,7 +131,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-height: 910px) {
     .waves {
         height: 40px;
         min-height: 40px;

@@ -35,7 +35,7 @@ export default {
         return {
             hover: false,
             islandHovered: -1,
-            rangeDisplayMult: 870,
+            rangeDisplayMult: 770,
         }
     },
     computed: {
