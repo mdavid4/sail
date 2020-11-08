@@ -1,7 +1,7 @@
 <template>
 <div v-bind="island">
     <div class="log">
-        <h3> Captain's Log: </h3>
+        <h3>Captain's Log:</h3>
         <div id="results">
             <p>Today we're visiting <strong>{{island.name_1}} {{island.name_2}}</strong></p>
             <p>latitude: {{island.lat}}, {{island.long}}</p>
@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="trade">
-        <h3> Merchant's Tally : </h3>
+        <h3>Merchant's Tally :</h3>
         <p class="current">Money: ${{this.$root.$data.money}}</p>
         <p class="current">Inventory: {{filledInventory}}/{{this.$root.$data.capacity}}</p>
         <table>

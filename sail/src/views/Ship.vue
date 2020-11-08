@@ -3,11 +3,11 @@
     <h3> Quartermaster's Blueprint: </h3>
     <table>
         <tr>
-            <th>Money</th>
+            <th>Money:</th>
             <td class="current">${{this.$root.$data.money}}</td>
         </tr>
         <tr>
-            <th>Cargo space</th>
+            <th>Cargo space:</th>
             <td class="current">{{this.$root.$data.capacity}}</td>
             <td is="upgrade" v-for="u in this.$root.$data.upgrades.cargo" v-bind:key="u.index" v-bind:upgrade="u" />
         </tr>
