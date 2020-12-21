@@ -1,7 +1,7 @@
 <template>
 <div id="app">
     <div class="page">
-        <div id="nav">
+        <div v-show="canNavigate" id="nav">
             <router-link to="/">Island</router-link> |
             <router-link to="/map">Map</router-link> |
             <router-link to="/ship">Ship</router-link>
@@ -20,13 +20,24 @@
         </svg>
         <div class="footer">
             <p>References:</p>
-            <a href="https://codepen.io/csspoints/pen/WNeOEqd">Waves starting point</a>
+            <a href="https://codepen.io/csspoints/pen/WNeOEqd">CSS Waves tutorial</a>
             <a href="https://github.com/mdavid4/sail.git">This project's Github</a>
             <a href="http://skyrates.net/">Inspired by Skyrates</a>
         </div>
     </div>
 </div>
 </template>
+
+<script>
+export default {
+    name: 'app',
+    computed: {
+        canNavigate() {
+            return !this.$root.$data.isProcessingQueue;
+        }
+    },
+};
+</script>
 
 <style>
 #app {
@@ -68,8 +79,8 @@ body {
     height: 15vh;
     margin-bottom: -7px;
     bottom: 2.4em;
-    min-height: 100px;
-    max-height: 150px;
+    min-height: 70px;
+    max-height: 90px;
     left: 0px;
 }
 
@@ -133,8 +144,8 @@ body {
 
 @media (max-height: 910px) {
     .waves {
-        height: 40px;
-        min-height: 40px;
+        height: 30px;
+        min-height: 30px;
     }
 
     #goButton {

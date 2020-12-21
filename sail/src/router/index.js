@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Island from '../views/Island.vue'
 import Map from '../views/Map.vue'
 import Ship from '../views/Ship.vue'
+import Process from '../views/process.vue'
 
 Vue.use(VueRouter)
 
@@ -20,6 +21,11 @@ const routes = [{
         path: '/ship',
         name: 'Ship',
         component: Ship
+    },
+    {
+        path: '/process',
+        name: 'Process',
+        component: Process
     },
 ]
 

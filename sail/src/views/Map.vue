@@ -24,6 +24,7 @@
                 </table>
             </div>
         </div>
+        <button class="button" @click="forceProcessQueue">Process Queue Now</button>
     </div>
 </div>
 </template>
@@ -44,7 +45,7 @@ export default {
         },
         islandFocused() {
             if (this.hover == true) {
-                return this.$root.$data.islands[this.islandHovered - 1];
+                return this.$root.$data.islands[this.islandHovered];
             } else return 0;
         },
         locationLeft() {
@@ -69,11 +70,28 @@ export default {
         attemptSailTo() {
             let distance = this.distance(this.islandAt, this.islandFocused);
             if (distance < this.$root.$data.range) {
-                this.$root.$data.currentIslandID = this.islandFocused.id - 1;
+                this.drawLine(this.islandAt, this.islandFocused);
+                this.$root.$data.currentIslandID = this.islandFocused.id;
+                //this.getEntry(this.islandFocused);
+                this.$root.$data.routesSailed++;
+                this.islandAt.timesVisited++;
+                this.evaluateEntries();
             } else {
                 this.showError = true;
                 setTimeout(() => this.showError = false, 2000);
             }
+
+        },
+        drawLine(island1, island2) {
+            let parent = document.getElementsByClassName("noOverflow")[0];
+            let line = document.createElement("div");
+            line.className = "line";
+            line.style.width = this.distance(island1, island2) * this.rangeDisplayMult / 2000 + "em";
+            line.style.left = island1.long + "%";
+            line.style.bottom = island1.lat + "%";
+            let degrees = -90 + Math.atan2(island2.long - island1.long, island2.lat - island1.lat) * 180 / Math.PI;
+            line.style.transform = "rotate(" + degrees + "deg)";
+            parent.appendChild(line);
         },
         goodIsTradable(good, index) {
             return this.$root.$data.tradableGoods[index];
@@ -91,6 +109,65 @@ export default {
                 }
             }
         },
+        evaluateEntries() {
+            let entriesGainedToday = 0;
+            if (this.$root.$data.routesSailed == 1 && this.$root.$data.allEntries["firstSail"].queued == false) {
+                entriesGainedToday++;
+                this.queueEntry("firstSail");
+            }
+            if (this.$root.$data.islands[13].timesVisited == 1 && this.$root.$data.allEntries["firstTownie"].queued == false) {
+                entriesGainedToday++;
+                this.queueEntry("firstTownie");
+            }
+            if (entriesGainedToday == 0) {
+                console.log("no entries from this leg of journey");
+            }
+        },
+        makeQueueEvent() {
+            let thisEvent = {
+                city: this.islandAt,
+                //TODO: include at-ocean, and other details
+            }
+            return thisEvent;
+        },
+        queueEntry(entryName) {
+            let entry = this.makeQueueEvent();
+            this.$root.$data.allEntries[entryName].queued = true;
+            entry.eventType = "entry";
+            entry.title = entryName;
+            console.log("queueing " + entryName);
+            this.$root.$data.eventsQueue.push(entry);
+        },
+        queueBuy(goodIndex, goodQuantity) {
+            let trade = this.makeQueueEvent();
+            trade.eventType = "entry";
+            trade.goodI = goodIndex;
+            trade.quantity = goodQuantity;
+            console.log(trade);
+            this.$root.$data.eventsQueue.push(trade);
+        },
+        queueSell(goodIndex, goodQuantity) {
+            let trade = this.makeQueueEvent();
+            trade.eventType = "entry";
+            trade.goodI = goodIndex;
+            trade.quantity = -goodQuantity;
+            console.log(trade);
+            this.$root.$data.eventsQueue.push(trade);
+        },
+        forceProcessQueue() {
+            this.$router.push({
+                path: `/process`
+            });
+        },
+        /*getEntry(island) {
+            let journal = "<h3>Captain's Log:</h3>" + '<div class="results"> <p> Today we visited <strong> ' +
+                island.name_1 + " " + island.name_2 + "</strong></p> <p> coordinates: " +
+                island.lat + "," + island.long + " </p> <p> Mayor: " +
+                island.mayor + " < /p> <p> Population: " + island.population_mult * island.population +
+                '</p> </div > <div class = "notes"><p> ' +
+                island.text + ' </p> </div> ';
+            this.$root.$data.entries.push(journal);
+        }*/
     }
 }
 </script>
@@ -169,6 +246,14 @@ table {
     position: absolute;
     left: -6px;
     bottom: 0.6em;
+}
+
+.noOverflow>>>.line {
+    position: absolute;
+    border-top: 1px solid black;
+    transform-origin: 0% 0%;
+    height: 0px;
+    pointer-events: none;
 }
 
 .middleAligner {

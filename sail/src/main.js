@@ -2,21 +2,43 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import mock from '../mockIslands.js'
+import generateEntries from '../entries.js'
 /*
 TODO:
--allow map to shrink while maintaining range circle size ratio
+--trade
+scarcity instead of exact price
+buy/sell on map
+max sets a number, which is attempted later
+rebalancing
+
+server side
+--realtime
+--save data on server
+--log-in and accounts
+
+redo upgrades to be block-placement
+
+combat
+
+--bugs
+map cannot shrink while maintaining range circle size ratio
 */
-let goods = ["food", "lumber", "ore", "aether", "luxury"]
+let goods = ["food", "lumber", "ore", "aether", "luxury"];
+//let goodCosts = [5, 25, 100, 400, 1000];
 
 let data = {
     islands: mock,
     currentIslandID: 13,
+    routesSailed: 0,
     money: 60,
     capacity: 40,
     range: 15,
     license: 0,
     tradableGoods: [true, false, false, false, false],
     inventory: {},
+    entries: ["firstPage"],
+    eventsQueue: [],
+    isProcessingQueue: false,
     upgrades: {
         cargo: {
             0: {
@@ -131,8 +153,9 @@ for (let i = 0; i < goods.length; i++) {
     data.inventory[goods[i]] = 0;
 }
 data.goods = goods;
+data.allEntries = generateEntries(data);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
     router,

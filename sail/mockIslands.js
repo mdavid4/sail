@@ -1,5 +1,6 @@
 let mock = [{
-        id: 1,
+        id: 0,
+        timesVisited: 0,
         name_1: 'Talbot',
         name_2: 'Crimson',
         mayor: 'Goudard',
@@ -11,10 +12,12 @@ let mock = [{
         lumber: 27,
         ore: 91,
         aether: 716,
-        luxury: 1731
+        luxury: 1731,
+        text: 'Ah, the town looks just like it used to.',
     },
     {
-        id: 2,
+        id: 1,
+        timesVisited: 0,
         name_1: 'Clemmie',
         name_2: 'Goldenrod',
         mayor: 'Simo',
@@ -26,10 +29,12 @@ let mock = [{
         lumber: 20,
         ore: 81,
         aether: 739,
-        luxury: 1727
+        luxury: 1727,
+        text: 'Some youths in the road were gossiping about Dread Pirate Ralph as I walked by. One said, "They are the fiercest pirate around, and anyone who picks a fight with them is plain stupid!" another said, "Why would someone want to pick fights anyways? What a jerk." The first replied, "Ah, but even though they try to live a peaceful life, other people keep messing with them. Thats why they always fly the emerald skull flag- so that anyone who wants peace can stay away."',
     },
     {
-        id: 3,
+        id: 2,
+        timesVisited: 0,
         name_1: 'Matilda',
         name_2: 'Crimson',
         mayor: 'Fossey',
@@ -41,10 +46,12 @@ let mock = [{
         lumber: 16,
         ore: 72,
         aether: 743,
-        luxury: 1752
+        luxury: 1752,
+        text: 'A begger stopped me on my way to the market. They asked, "Whats is it that humans find most valuable?" I was at a loss for words, so they answered their own question and said, "That which they can see, but cannot touch. That is why art is prettier the farther you are from it." I kept thinking about that philosophy throughout the day.',
     },
     {
-        id: 4,
+        id: 3,
+        timesVisited: 0,
         name_1: 'Locke',
         name_2: 'Red',
         mayor: 'Barca',
@@ -56,10 +63,12 @@ let mock = [{
         lumber: 24,
         ore: 81,
         aether: 793,
-        luxury: 1743
+        luxury: 1743,
+        text: 'Today I saw a shark in the ocean.',
     },
     {
-        id: 5,
+        id: 4,
+        timesVisited: 0,
         name_1: 'Faunie',
         name_2: 'Indigo',
         mayor: 'Barwack',
@@ -71,10 +80,12 @@ let mock = [{
         lumber: 18,
         ore: 84,
         aether: 751,
-        luxury: 1686
+        luxury: 1686,
+        text: 'A pidgeon pooped above me today, but it fell just in front of me. If it had been another few centimeters...',
     },
     {
-        id: 6,
+        id: 5,
+        timesVisited: 0,
         name_1: 'Tamara',
         name_2: 'Crimson',
         mayor: 'Rault',
@@ -86,10 +97,12 @@ let mock = [{
         lumber: 19,
         ore: 85,
         aether: 689,
-        luxury: 717
+        luxury: 717,
+        text: 'Today a shark in the ocean saw me.',
     },
     {
-        id: 7,
+        id: 6,
+        timesVisited: 0,
         name_1: 'Cletis',
         name_2: 'Violet',
         mayor: 'Ambrosini',
@@ -101,10 +114,12 @@ let mock = [{
         lumber: 13,
         ore: 81,
         aether: 683,
-        luxury: 1779
+        luxury: 1779,
+        text: 'Haha, I feel on top of the world! Well, at least on top of the ocean.',
     },
     {
-        id: 8,
+        id: 7,
+        timesVisited: 0,
         name_1: 'Rosabel',
         name_2: 'Turquoise',
         mayor: 'Fishpond',
@@ -116,10 +131,12 @@ let mock = [{
         lumber: 20,
         ore: 70,
         aether: 748,
-        luxury: 1751
+        luxury: 1751,
+        text: 'In the distance, I saw a ship whose flag pictured a skull with an emerald in its eye. Could it be...?',
     },
     {
-        id: 9,
+        id: 8,
+        timesVisited: 0,
         name_1: 'Jewell',
         name_2: 'Violet',
         mayor: 'Jeavons',
@@ -131,10 +148,12 @@ let mock = [{
         lumber: 16,
         ore: 82,
         aether: 742,
-        luxury: 1747
+        luxury: 1747,
+        text: 'I saw the most amazing shooting star the other night!',
     },
     {
-        id: 10,
+        id: 9,
+        timesVisited: 0,
         name_1: 'Mollee',
         name_2: 'Maroon',
         mayor: 'Tingcomb',
@@ -146,10 +165,12 @@ let mock = [{
         lumber: 19,
         ore: 95,
         aether: 738,
-        luxury: 1720
+        luxury: 1720,
+        text: 'I saw someone very pretty on the docks today! They were looking away though, and did not see me.',
     },
     {
-        id: 11,
+        id: 10,
+        timesVisited: 0,
         name_1: 'Auberta',
         name_2: 'Maroon',
         mayor: 'Mawd',
@@ -161,10 +182,12 @@ let mock = [{
         lumber: 22,
         ore: 90,
         aether: 749,
-        luxury: 1715
+        luxury: 1715,
+        text: 'Brrr, the seas sure were cold pulling into port.',
     },
     {
-        id: 12,
+        id: 11,
+        timesVisited: 0,
         name_1: 'Maryann',
         name_2: 'Teal',
         mayor: 'Lockhart',
@@ -176,10 +199,12 @@ let mock = [{
         lumber: 15,
         ore: 71,
         aether: 751,
-        luxury: 1769
+        luxury: 1769,
+        text: 'Someone on this island cussed me out What a jerk.',
     },
     {
-        id: 13,
+        id: 12,
+        timesVisited: 0,
         name_1: 'Moises',
         name_2: 'Turquoise',
         mayor: 'Beeson',
@@ -191,10 +216,12 @@ let mock = [{
         lumber: 28,
         ore: 75,
         aether: 725,
-        luxury: 1783
+        luxury: 1783,
+        text: 'Today I saw a shark in the ocean.',
     },
     {
-        id: 14,
+        id: 13,
+        timesVisited: 0,
         name_1: 'Townie',
         name_2: 'Green',
         mayor: 'Pollastrino',
@@ -206,10 +233,12 @@ let mock = [{
         lumber: 13,
         ore: 62,
         aether: 735,
-        luxury: 1750
+        luxury: 1750,
+        text: 'I thought, "Hey, I have a boat. Why not leave?"',
     },
     {
-        id: 15,
+        id: 14,
+        timesVisited: 0,
         name_1: 'Murdoch',
         name_2: 'Khaki',
         mayor: 'Coulthart',
@@ -221,10 +250,12 @@ let mock = [{
         lumber: 14,
         ore: 81,
         aether: 782,
-        luxury: 1708
+        luxury: 1708,
+        text: 'Today I was very misty, and I almost crashed the ship pulling into port. That would have been a real mess.',
     },
     {
-        id: 16,
+        id: 15,
+        timesVisited: 0,
         name_1: 'Merrill',
         name_2: 'Indigo',
         mayor: 'Ciobutaro',
@@ -236,10 +267,12 @@ let mock = [{
         lumber: 20,
         ore: 94,
         aether: 766,
-        luxury: 1758
+        luxury: 1758,
+        text: 'We crossed paths with some friendly merchants out at sea this morning. They offered us some food, but the price was a little high, so I declined.',
     },
     {
-        id: 17,
+        id: 16,
+        timesVisited: 0,
         name_1: 'Benoite',
         name_2: 'Purple',
         mayor: 'Bonwick',
@@ -251,10 +284,12 @@ let mock = [{
         lumber: 23,
         ore: 89,
         aether: 762,
-        luxury: 1727
+        luxury: 1727,
+        text: 'That merchant smirked as I left. I think I should have haggled the price down further...',
     },
     {
-        id: 18,
+        id: 17,
+        timesVisited: 0,
         name_1: 'Ronnica',
         name_2: 'Yellow',
         mayor: 'Tinwell',
@@ -266,10 +301,12 @@ let mock = [{
         lumber: 27,
         ore: 66,
         aether: 739,
-        luxury: 1722
+        luxury: 1722,
+        text: 'Today was uneventful.',
     },
     {
-        id: 19,
+        id: 18,
+        timesVisited: 0,
         name_1: 'Breena',
         name_2: 'Goldenrod',
         mayor: 'Cossell',
@@ -281,10 +318,12 @@ let mock = [{
         lumber: 15,
         ore: 87,
         aether: 766,
-        luxury: 1710
+        luxury: 1710,
+        text: 'I lost my favorite pen. Hopefully I will find it on my ship later...',
     },
     {
-        id: 20,
+        id: 19,
+        timesVisited: 0,
         name_1: 'Odette',
         name_2: 'Puce',
         mayor: 'Chuck',
@@ -296,10 +335,12 @@ let mock = [{
         lumber: 22,
         ore: 92,
         aether: 719,
-        luxury: 1752
+        luxury: 1752,
+        text: '20',
     },
     {
-        id: 21,
+        id: 20,
+        timesVisited: 0,
         name_1: 'Evelyn',
         name_2: 'Purple',
         mayor: 'Kemshell',
@@ -311,10 +352,12 @@ let mock = [{
         lumber: 23,
         ore: 63,
         aether: 792,
-        luxury: 1738
+        luxury: 1738,
+        text: '21.',
     },
     {
-        id: 22,
+        id: 21,
+        timesVisited: 0,
         name_1: 'Aleta',
         name_2: 'Red',
         mayor: 'Kerslake',
@@ -326,10 +369,12 @@ let mock = [{
         lumber: 20,
         ore: 97,
         aether: 721,
-        luxury: 1781
+        luxury: 1781,
+        text: '22.',
     },
     {
-        id: 23,
+        id: 22,
+        timesVisited: 0,
         name_1: 'Leonore',
         name_2: 'Violet',
         mayor: 'Kingwell',
@@ -341,10 +386,12 @@ let mock = [{
         lumber: 18,
         ore: 71,
         aether: 731,
-        luxury: 1746
+        luxury: 1746,
+        text: '23.',
     },
     {
-        id: 24,
+        id: 23,
+        timesVisited: 0,
         name_1: 'Anallese',
         name_2: 'Maroon',
         mayor: 'Crowcombe',
@@ -356,10 +403,12 @@ let mock = [{
         lumber: 21,
         ore: 76,
         aether: 762,
-        luxury: 1796
+        luxury: 1796,
+        text: '24.',
     },
     {
-        id: 25,
+        id: 24,
+        timesVisited: 0,
         name_1: 'Della',
         name_2: 'Blue',
         mayor: 'Elesander',
@@ -371,10 +420,12 @@ let mock = [{
         lumber: 21,
         ore: 72,
         aether: 790,
-        luxury: 1753
+        luxury: 1753,
+        text: '25.',
     },
     {
-        id: 26,
+        id: 25,
+        timesVisited: 0,
         name_1: 'Juieta',
         name_2: 'Pink',
         mayor: 'Tessington',
@@ -386,10 +437,12 @@ let mock = [{
         lumber: 14,
         ore: 83,
         aether: 724,
-        luxury: 1746
+        luxury: 1746,
+        text: '26.',
     },
     {
-        id: 27,
+        id: 26,
+        timesVisited: 0,
         name_1: 'Jenni',
         name_2: 'Mauv',
         mayor: 'Pedder',
@@ -401,10 +454,12 @@ let mock = [{
         lumber: 16,
         ore: 75,
         aether: 741,
-        luxury: 1767
+        luxury: 1767,
+        text: '27.',
     },
     {
-        id: 28,
+        id: 27,
+        timesVisited: 0,
         name_1: 'Bartie',
         name_2: 'Green',
         mayor: 'Ollander',
@@ -416,10 +471,12 @@ let mock = [{
         lumber: 15,
         ore: 78,
         aether: 730,
-        luxury: 1698
+        luxury: 1698,
+        text: '28.',
     },
     {
-        id: 29,
+        id: 28,
+        timesVisited: 0,
         name_1: 'Keelby',
         name_2: 'Yellow',
         mayor: 'Solano',
@@ -431,10 +488,12 @@ let mock = [{
         lumber: 20,
         ore: 75,
         aether: 758,
-        luxury: 1743
+        luxury: 1743,
+        text: '29.',
     },
     {
-        id: 30,
+        id: 29,
+        timesVisited: 0,
         name_1: 'Morlee',
         name_2: 'Teal',
         mayor: 'Labet',
@@ -446,7 +505,8 @@ let mock = [{
         lumber: 11,
         ore: 89,
         aether: 767,
-        luxury: 1793
+        luxury: 1793,
+        text: '30.',
     }
 ]
 
